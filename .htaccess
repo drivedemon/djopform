@@ -1,0 +1,58 @@
+<IfModule mod_rewrite.c>  
+   RewriteEngine On
+# homepage
+   RewriteRule ^home/([0-9]+)/$ home.php?user=$1
+   RewriteRule ^home/([0-9]+)$ /djopform/home/$1/ [R]
+# paging
+   RewriteRule ^home/([0-9]+)/page=([0-9]+)$ home.php?user=$1&Page=$2
+   RewriteRule ^home/([0-9]+)/page=([0-9]+)$ /djopform/home/$1/Page=$2/ [R]
+# logout
+   RewriteRule ^logout$ logout.php
+# report page
+   RewriteRule ^report/([0-9]+)/$ report.php?user=$1
+   RewriteRule ^report/([0-9]+)$ /djopform/report/$1/ [R]
+# export excel
+   RewriteRule ^report/([0-9]+)/excel$ excel.php
+# Save data-report1
+   RewriteRule ^page1/([0-9]+)/p1$ report-form-sent-p1.php
+# Save data-report2
+   RewriteRule ^page2/([0-9]+)/p2$ report-form-sent-p2.php
+# Save data-report3
+   RewriteRule ^page3/([0-9]+)/p3$ report-form-sent-p3.php
+# Save data-report1(have netname)
+   RewriteRule ^page1/([0-9]+)/n=(.*)/p1$ report-form-sent-p1.php
+# Save data-report2(have netname)
+   RewriteRule ^page2/([0-9]+)/n=(.*)/p2$ report-form-sent-p2.php
+# Save data-report3(have netname)
+   RewriteRule ^page3/([0-9]+)/n=(.*)/p3$ report-form-sent-p3.php
+# add menu go to page1
+   RewriteRule ^page1/([0-9]+)/menu=add$ page1.php?user=$1&menu=add
+   RewriteRule ^page1/([0-9]+)/menu=add$ /djopform/page1/$1/menu=add/ [R]
+# add menu go to page2
+   RewriteRule ^page2/([0-9]+)/menu=add$ page2.php?user=$1&menu=add
+   RewriteRule ^page2/([0-9]+)/menu=add$ /djopform/page2/$1/menu=add/ [R]
+# add menu go to page3
+   RewriteRule ^page3/([0-9]+)/menu=add$ page3.php?user=$1&menu=add
+   RewriteRule ^page3/([0-9]+)/menu=add$ /djopform/page3/$1/menu=add/ [R]
+# edit menu go to page1
+   RewriteRule ^page1/([0-9]+)/n=(.*)/menu=edit$ page1.php?user=$1&nname=$2&menu=edit
+   RewriteRule ^page1/([0-9]+)/n=(.*)/menu=edit$ /djopform/page1/$1/n=$2/menu=edit/ [R]
+# edit menu go to page2
+   RewriteRule ^page2/([0-9]+)/n=(.*)/menu=edit$ page2.php?user=$1&nname=$2&menu=edit
+   RewriteRule ^page2/([0-9]+)/n=(.*)/menu=edit$ /djopform/page2/$1/n=$2/menu=edit/ [R]
+# edit menu go to page3
+   RewriteRule ^page3/([0-9]+)/n=(.*)/menu=edit$ page3.php?user=$1&nname=$2&menu=edit
+   RewriteRule ^page3/([0-9]+)/n=(.*)/menu=edit$ /djopform/page3/$1/n=$2/menu=edit/ [R]
+# page 1 add after insert data menu go to page2
+   RewriteRule ^page2/([0-9]+)/n=(.*)/menu=add$ page2.php?user=$1&nname=$2&menu=add
+   RewriteRule ^page2/([0-9]+)/n=(.*)/menu=add$ /djopform/page2/$1/n=$2/menu=add/ [R]
+# page 2 add after insert data menu go to page1
+   RewriteRule ^page1/([0-9]+)/n=(.*)/menu=add$ page1.php?user=$1&nname=$2&menu=add
+   RewriteRule ^page1/([0-9]+)/n=(.*)/menu=add$ /djopform/page1/$1/n=$2/menu=add/ [R]
+# page 2 add after insert data menu go to page3
+   RewriteRule ^page3/([0-9]+)/n=(.*)/menu=add$ page3.php?user=$1&nname=$2&menu=add
+   RewriteRule ^page3/([0-9]+)/n=(.*)/menu=add$ /djopform/page3/$1/n=$2/menu=add/ [R]
+# page 3 add after insert data menu go to page2
+   RewriteRule ^page2/([0-9]+)/n=(.*)/menu=(.*)$ page2.php?user=$1&nname=$2&menu=$3
+   RewriteRule ^page2/([0-9]+)/n=(.*)/menu=(.*)$ /djopform/page3/$1/n=$2/menu=$3/ [R]
+</IfModule>
