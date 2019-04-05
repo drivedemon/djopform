@@ -16,19 +16,11 @@ if($_SESSION["userID"] != $_GET['user']){
 }
 unset($_SESSION["create_da"]);
 ?>
-<style>
-.centercolor {
-	margin: auto;
-	width: 25%;
-	border: 3px solid #888888;
-	padding: 10px;
-	border-radius: 10px;
-}
-</style>
 <!DOCTYPE html>
 <html lang="en">
 <!-- Head -->
 <head>
+	<link rel="stylesheet" href="/djopform/css/style.css" type="text/css">
 	<!-- Required meta tags -->
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,7 +29,7 @@ unset($_SESSION["create_da"]);
 	<title>รายงานผลการดำเนินงาน</title>
 </head>
 <body>
-	<div style="font-size: 25px">
+	<div style="font-size: 25px; display :flex; justify-content: space-between">
 		<?php
 		$sql_receiver = "SELECT name FROM userlogin WHERE id=".$_GET['user']."";
 		$query_receiver = mysqli_query($conn,$sql_receiver);
@@ -47,6 +39,7 @@ unset($_SESSION["create_da"]);
 		// $result = mysqli_query($conn,$sql);
 		?>
 		<?php echo "หน่วยงาน : ".$data_receiver['name']; ?>
+		<button class="button button5" onclick="javascript:window.open('admin_excel');">Admin report</button>
 	</div> <hr>
 	<fieldset>
 		<form name="form" action="excel" method="post"enctype="multipart/form-data" target="report.php" >
@@ -82,7 +75,6 @@ unset($_SESSION["create_da"]);
 				<input type="checkbox" id="all" onClick="clickChange()" name="selectAll" value="0"> ทั้งหมดในหน่วยงาน
 			</div>
 			<br>
-
 				<div style="display :flex; justify-content: space-between">
 					<button type="button" name="export" style="visibility:hidden;">Export</button>
 					<button type="submit" name="export">Export</button>

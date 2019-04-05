@@ -1,6 +1,7 @@
 <?php
 require 'dbconnect.php';
 date_default_timezone_set('Asia/Bangkok');
+header('Content-Type: text/html; charset=utf-8');
 
 //Choice 7
 $sup = (isset($_POST["sup"]))?$_POST["sup"]:'';
@@ -497,13 +498,15 @@ if (empty($oph2)) {
                   $count = mysqli_num_rows($check_uniqe_directory);
 
                   if($count==0){
-                    $newname = $ext[0].date('Y').".".$actualext;
+                    $extend_name = mt_rand(0,99999);
+                    $newname = "attachment_".date('Y')."_".$extend_name.".".$actualext;
                   }else if ($count!=0){
-                    $extend_name = mt_rand(0,9);
-                    $newname = $ext[0].date('Y')."_".$extend_name.".".$actualext;
+                    $extend_name = mt_rand(0,999999);
+                    $newname = "attachment_".date('Y')."_".$extend_name.".".$actualext;
                   }
-                  $fileDestination = 'file-upload/'.$newname;
+                  $fileDestination = "file-upload/".$newname;
                   if ($countq>0) {
+                    // copy($_FILES['file']['tmp_name'],"file-upload/".$newname);
                     move_uploaded_file($tempName,$fileDestination);
                     $sql =" UPDATE network_detail
                     set recording_agreement ='$newname',
@@ -573,10 +576,11 @@ if (empty($oph2)) {
             $count = mysqli_num_rows($check_uniqe_directory);
 
             if($count==0){
-              $newname = $ext[0].date('Y').".".$actualext;
+              $extend_name = mt_rand(0,99999);
+              $newname = "attachment_".date('Y')."_".$extend_name.".".$actualext;
             }else if ($count!=0){
-              $extend_name = mt_rand(0,9);
-              $newname = $ext[0].date('Y')."_".$extend_name.".".$actualext;
+              $extend_name = mt_rand(0,999999);
+              $newname = "attachment_".date('Y')."_".$extend_name.".".$actualext;
             }
             $fileDestination = 'file-upload/'.$newname;
             if ($countq>0) {

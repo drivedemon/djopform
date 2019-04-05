@@ -1,6 +1,7 @@
 <?php
 require 'dbconnect.php';
 date_default_timezone_set('Asia/Bangkok');
+header('Content-Type: text/html; charset=utf-8');
 //Year
 $txt_dateyear = (isset($_POST['txtDate_year']))? $_POST["txtDate_year"]:'';
 //Month

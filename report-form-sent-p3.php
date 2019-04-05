@@ -2,6 +2,8 @@
 require 'dbconnect.php';
 session_start();
 date_default_timezone_set('Asia/Bangkok');
+header('Content-Type: text/html; charset=utf-8');
+
 $user_id = $_POST['user_id'];
 $net_name_O = $_POST['n_name'];
 $menu = $_POST['menu'];
