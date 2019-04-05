@@ -13,6 +13,8 @@
    RewriteRule ^report/([0-9]+)$ /djopform/report/$1/ [R]
 # export excel
    RewriteRule ^report/([0-9]+)/excel$ excel.php
+# export admin-excel
+   RewriteRule ^report/([0-9]+)/admin_excel$ admin_excel.php
 # Save data-report1
    RewriteRule ^page1/([0-9]+)/p1$ report-form-sent-p1.php
 # Save data-report2
