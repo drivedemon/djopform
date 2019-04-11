@@ -36,11 +36,11 @@ $act= serialize($act_arr);
 
 $user_id = $_POST['user_id'];
 $menu = $_POST['menu'];
-$netname = $_POST['n_name'];
+$netname_Old = $_POST['n_name'];
 $u_date = date("Y-m-d H:i:s");
 $c_date = date("Y-m-d H:i:s");
 
-$sql_se = "SELECT * FROM network_detail WHERE user_id=$user_id and network_name=\"$netname\"";
+$sql_se = "SELECT * FROM network_detail WHERE user_id=$user_id and network_name=\"$netname_Old\"";
 $res = mysqli_query($conn,$sql_se) or die(mysqli_error());
 $count = mysqli_num_rows($res);
 
@@ -62,7 +62,7 @@ if (!empty($oph) && !empty($date) && !empty($cate) && !empty($type) && !empty($n
     $sql = "UPDATE network_detail
     set year = '$txt_dateyear',
     month = '$txt_datemonth',
-    network_name = '$netname',
+    network_name = '$netname_Old',
     address = '$address',
     history = '$oph',
     date_activity = '$date',
@@ -72,7 +72,7 @@ if (!empty($oph) && !empty($date) && !empty($cate) && !empty($type) && !empty($n
       $sql .= "valuation = null, ";
     }
     $sql .= "update_date = '$u_date'
-    WHERE user_id = '$user_id' and network_name = '$netname'";
+    WHERE user_id = '$user_id' and network_name = '$netname_Old'";
   } else {
     $sql_dup = "SELECT * FROM network_detail WHERE user_id=$user_id and network_name=\"$net_name\"";
     $querydup = mysqli_query($conn,$sql_dup);
