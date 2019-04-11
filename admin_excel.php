@@ -5,7 +5,7 @@ session_start();
 error_reporting(0); // close all error
 // set html to excel format
 header("Content-Type: application/vnd.ms-excel");
-header('Content-Disposition: attachment; filename="MyXls.xls"');
+header('Content-Disposition: attachment; filename="MyXls_admin.xls"');
 
 
 $query = "SELECT * FROM network_detail ORDER BY update_date ASC";
