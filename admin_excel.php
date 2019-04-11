@@ -472,6 +472,47 @@ xmlns="http://www.w3.org/TR/REC-html40"> -->
             if (empty($ref_751)) { $ref_751 = "-"; }
             if (empty($ref_752)) { $ref_752 = "-"; }
           }
+        } else {
+          $val_71 = "-";
+          $ref_71 = "-";
+          $detail_71 = "-";
+          $lec_72 = "-";
+          $artist_72 = "-";
+          $sdepart_72 = "-";
+          $act_72 = "-";
+          $aprt_72 = "-";
+          $outact_72 = "-";
+          $oth_new72 = "-";
+          $ref_72 = "-";
+          $detail_72 = "-";
+          $met_73 = "-";
+          $food_73 = "-";
+          $reward_73 = "-";
+          $place_73 = "-";
+          $veh_73 = "-";
+          $sad_73 = "-";
+          $bm_73 = "-";
+          $ms_73 = "-";
+          $obj_med_73 = "-";
+          $oth_new73 = "-";
+          $ref_73 = "-";
+          $detail_73 = "-";
+          $res_74 = "-";
+          $ff_74 = "-";
+          $fp_74 = "-";
+          $emp_74 = "-";
+          $grt_74 = "-";
+          $appren_74 = "-";
+          $admis_74 = "-";
+          $scholar_74 = "-";
+          $supcar_74 = "-";
+          $oth_new74 = "-";
+          $ref_74 = "-";
+          $detail_74 = "-";
+          $release_75 = "-";
+          $ref_751 = "-";
+          $statute_75 = "-";
+          $ref_752 = "-";
         }
         // choice 8
         $stajuv = unserialize($row['status_juvenile']);

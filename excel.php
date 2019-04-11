@@ -32,37 +32,41 @@ function thainamedepartFull($name){
 };
 
 function floatInt($int){
-	$ex_br = explode("<br>", $int);
-	$count = count($ex_br);
-	// ex[0] > br || ex[1] > number
-	$i = 1;
-	while ($i <= $count) {
-		$ind = $i-1;
-		$point = strpos($ex_br[$ind], ".");
-		if ($point == true) {
-			if ($ind == 0) {
-				$arr = explode(".", $ex_br[$ind]);
-				$num = number_format($arr[0]);
-				$decimal = substr($arr[1], 0, 2);
-				$int = thainumDigit($num).".".thainumDigit($decimal);
+	if ($int != "-") {
+		$ex_br = explode("<br>", $int);
+		$count = count($ex_br);
+		// ex[0] > br || ex[1] > number
+		$i = 1;
+		while ($i <= $count) {
+			$ind = $i-1;
+			$point = strpos($ex_br[$ind], ".");
+			if ($point == true) {
+				if ($ind == 0) {
+					$arr = explode(".", $ex_br[$ind]);
+					$num = number_format($arr[0]);
+					$decimal = substr($arr[1], 0, 2);
+					$int = thainumDigit($num).".".thainumDigit($decimal);
+				} else {
+					$arr = explode(".", $ex_br[$ind]);
+					$num = number_format($arr[0]);
+					$decimal = substr($arr[1], 0, 2);
+					$int .= "<br>".thainumDigit($num).".".thainumDigit($decimal);
+				}
 			} else {
-				$arr = explode(".", $ex_br[$ind]);
-				$num = number_format($arr[0]);
-				$decimal = substr($arr[1], 0, 2);
-				$int .= "<br>".thainumDigit($num).".".thainumDigit($decimal);
+				if ($ind == 0) {
+					$decimal = ".๐๐";
+					$num = number_format($ex_br[$ind]);
+					$int = thainumDigit($num).$decimal;
+				} else {
+					$decimal = ".๐๐";
+					$num = number_format($ex_br[$ind]);
+					$int .= "<br>".thainumDigit($num).$decimal;
+				}
 			}
-		} else {
-			if ($ind == 0) {
-				$decimal = ".๐๐";
-				$num = number_format($ex_br[$ind]);
-				$int = thainumDigit($num).$decimal;
-			} else {
-				$decimal = ".๐๐";
-				$num = number_format($ex_br[$ind]);
-				$int .= "<br>".thainumDigit($num).$decimal;
-			}
+			$i++;
 		}
-		$i++;
+	} else {
+		$int = "-";
 	}
 	return $int;
 };
@@ -821,6 +825,11 @@ xmlns="http://www.w3.org/TR/REC-html40"> -->
             }
             // echo "$sum===<br>";
           }
+        } else {
+					$title7 = "-";
+					$detail = "-";
+					$sum = "-";
+					$fref = "-";
         }
 
         // <td colspan="2" align="center"> -- colspan => merge cell // align => position
