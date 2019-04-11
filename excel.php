@@ -227,7 +227,7 @@ xmlns="http://www.w3.org/TR/REC-html40"> -->
             }
           }
         } else {
-          $fstajuv = "";
+          $fstajuv = "-";
         }
 
         // convert valuation

@@ -39,7 +39,7 @@ unset($_SESSION["create_da"]);
 		// $result = mysqli_query($conn,$sql);
 		?>
 		<?php echo "หน่วยงาน : ".$data_receiver['name']; ?>
-		<button class="button button5" style="<?php if ($_GET['user']==2){echo "";}else{echo "display:none;";} ?>" onclick="<?php if ($_GET['user']==2){echo "javascript:window.open('admin_excel');";}else{echo "";} ?>">Admin report</button>
+		<button class="button button5" style="<?php if ($_GET['user']==111){echo "";}else{echo "display:none;";} ?>" onclick="<?php if ($_GET['user']==111){echo "javascript:window.open('admin_excel');";}else{echo "";} ?>">Admin report</button>
 	</div> <hr>
 	<fieldset>
 		<form name="form" action="excel" method="post"enctype="multipart/form-data" target="report.php" >

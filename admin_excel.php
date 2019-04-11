@@ -533,6 +533,8 @@ xmlns="http://www.w3.org/TR/REC-html40"> -->
               }
             }
           }
+        } else {
+          $stajuv_8 = "-";
         }
         // choice 9
         $prob = unserialize($row['problem']);
@@ -553,6 +555,8 @@ xmlns="http://www.w3.org/TR/REC-html40"> -->
               }
             }
           }
+        } else {
+          $prob_9 = "-";
         }
         // choice 10
         $net_desc = (isset($row['network_role_description']))?($row['network_role_description']):'-';
