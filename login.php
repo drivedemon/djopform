@@ -17,7 +17,7 @@
 	if($numRows  == 1){
 		$row = mysqli_fetch_assoc($query_checkpass);
 		$password_en = password_verify($password,$row['password']);
-		// if(password_verify($password,$row['password'])){
+		if(password_verify($password,$row['password'])){
 			$sql = "SELECT * FROM userlogin WHERE username='$username'";
 			$query = mysqli_query($conn,$sql);
 			$data = mysqli_fetch_array($query);
@@ -37,11 +37,11 @@
 				Header("Location: page1/".$data['id']."/menu=add");
 			}
 
-		// }
-		// else{
-		// 	echo "<script type='text/javascript'>alert('รหัสผ่านไม่ถูกต้อง');javascript:history.go(-1);</script>";
-		//
-		// }
+		}
+		else{
+			echo "<script type='text/javascript'>alert('รหัสผ่านไม่ถูกต้อง');javascript:history.go(-1);</script>";
+
+		}
 	}
 	else{
 		echo "<script type='text/javascript'>alert('ไม่มีผู้ใช้นี้');javascript:history.go(-1);</script>";
