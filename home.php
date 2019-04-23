@@ -28,6 +28,7 @@ function replacepoint($num){
 <html lang="en">
 <!-- Head -->
 <head>
+  <img src="/djopform/img/network-1.jpg" width="100%" height="125">
 	<link rel="stylesheet" href="/djopform/css/style.css" type="text/css">
 	<!-- Required meta tags -->
 	<meta charset="UTF-8">

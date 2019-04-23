@@ -16,6 +16,7 @@
     </style>
 </head>
 <body>
+  <img src="./img/network-1.jpg" width="100%" height="125">
 <div style="display: flex; justify-content: center; padding-top: 100px">
     <form name="frmlogin"  method="post" action="login.php">
         <table cellspacing="20" >

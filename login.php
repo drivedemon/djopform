@@ -4,6 +4,7 @@
 	ini_set('display_errors', 1);
 	session_start();
 	require 'dbconnect.php';
+	header('Content-Type: text/html; charset=utf-8');
 	$username = $_POST["txtUser"];
 	$username = htmlspecialchars($username,ENT_QUOTES);
 	$username = mysqli_real_escape_string($conn,$username);

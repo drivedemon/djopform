@@ -22,6 +22,7 @@ if($_SESSION["userID"] != $_GET['user']){
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<img src="/djopform/img/network-1.jpg" width="100%" height="125">
 	<h2>การรายงานผลการดำเนินงานร่วมกับเครือข่ายและการรายงานมูลค่า(เงินสด/วัสดุ)ที่เครืออข่ายนำมาสนับสนุนภารกิจหน่วยงาน(ต่อ)</h2>
 	<title>รายงานผลการดำเนินงาน</title>
 </head>
